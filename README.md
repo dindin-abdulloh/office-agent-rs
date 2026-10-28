@@ -30,3 +30,11 @@ python -m venv .venv
 
 Skill untuk WorkBuddy ada di `workbuddy/SKILL.md`. Semua data (kontak, aturan, notulen) adalah data mock di `data/`.
 Daftar hari libur di `data/rules.json` hanya contoh demo.
+
+## Halaman demo
+
+`docs/index.html` adalah halaman statis (GitHub Pages) yang memutar ulang skenario nyata. Datanya dihasilkan kernel asli:
+
+```bash
+.venv/Scripts/python scripts/export_demo_data.py   # menulis docs/demo-data.js
+```

@@ -316,8 +316,11 @@ class Kernel:
     def execute_plan(self, plan_id: str) -> dict:
         plan = self.get_plan(plan_id)
         ap = plan.get("approval")
-        if plan["status"] != "approved" or not ap or ap["plan_hash"] != self._hash(plan):
-            self.audit.log("execution_blocked", SYSTEM, plan_id=plan_id, status=plan["status"], reason="belum disetujui atau hash tidak cocok")
+        if plan["status"] == "approved" and ap and ap["plan_hash"] != self._hash(plan):
+            self.audit.log("execution_blocked", SYSTEM, plan_id=plan_id, status=plan["status"], reason="hash tidak cocok: isi rencana berubah sejak disetujui")
+            raise KernelError(f"Eksekusi ditolak: isi rencana {plan_id} berubah sejak disetujui (hash tidak cocok)")
+        if plan["status"] != "approved" or not ap:
+            self.audit.log("execution_blocked", SYSTEM, plan_id=plan_id, status=plan["status"], reason="belum disetujui manusia")
             raise KernelError(f"Eksekusi ditolak: rencana {plan_id} belum disetujui manusia (status: {plan['status']})")
         effects = []
         for a in plan["actions"]:
