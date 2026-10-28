@@ -12,7 +12,7 @@ WorkBuddy (LLM + skill)  --MCP-->  office-agent-rs (kernel)  --hanya rencana app
         |                              audit log berantai hash
    tidak punya tool approve                    ^
                                                |  approve / tolak
-                              UI persetujuan manusia (proses terpisah, 127.0.0.1:8250)
+                              UI persetujuan manusia (proses terpisah, 127.0.0.1:8251)
 ```
 
 Batas kepercayaan: LLM hanya menyusun rencana. Kernel memeriksa kontak ambigu, jadwal (WIB/WITA/WIT, jam kerja,

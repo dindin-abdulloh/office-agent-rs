@@ -1,6 +1,6 @@
 """Layar konfirmasi manusia. Proses terpisah dari MCP server: di sinilah satu-satunya tempat approve.
 
-Jalankan: python -m office_agent.approval_ui   (http://127.0.0.1:8250)
+Jalankan: python -m office_agent.approval_ui   (http://127.0.0.1:8251)
 """
 from __future__ import annotations
 
@@ -110,7 +110,7 @@ def reject(plan_id: str, approver: str = Form("manusia"), reason: str = Form("")
 
 
 def main() -> None:
-    uvicorn.run(app, host="127.0.0.1", port=int(os.getenv("APPROVAL_UI_PORT", "8250")))
+    uvicorn.run(app, host="127.0.0.1", port=int(os.getenv("APPROVAL_UI_PORT", "8251")))
 
 
 if __name__ == "__main__":

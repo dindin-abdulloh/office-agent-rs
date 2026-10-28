@@ -75,7 +75,7 @@
   <text class="zt" x="706" y="84" fill="#15803d">ZONA 3: MANUSIA</text>
   <rect class="box" x="710" y="100" width="210" height="110" rx="8"/>
   <text class="tb" x="722" y="124">Layar konfirmasi</text>
-  <text class="s" x="722" y="144">UI web 127.0.0.1:8250</text>
+  <text class="s" x="722" y="144">UI web 127.0.0.1:8251</text>
   <text class="s" x="722" y="162">atau CLI approve (hanya TTY)</text>
   <text class="s" x="722" y="182">penerima, waktu, isi persis</text>
   <text class="s" x="722" y="200">proses terpisah dari MCP server</text>

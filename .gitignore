@@ -2,3 +2,7 @@
 __pycache__/
 .pytest_cache/
 data/state/
+submission/upload/
+submission/recordings/
+submission/demo-video-script.md
+submission/recording-shot-list.md
