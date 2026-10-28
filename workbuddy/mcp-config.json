@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "office-agent-rs": {
+      "command": "D:\\DINDIN\\aiclub-hackathon\\office-agent\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "office_agent.server"],
+      "env": {
+        "PYTHONPATH": "D:\\DINDIN\\aiclub-hackathon\\office-agent\\src",
+        "OFFICE_AGENT_DATA": "D:\\DINDIN\\aiclub-hackathon\\office-agent\\data"
+      }
+    }
+  }
+}

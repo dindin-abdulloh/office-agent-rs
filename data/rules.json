@@ -1,0 +1,15 @@
+{
+  "timezones": {"WIB": 7, "WITA": 8, "WIT": 9},
+  "office_hours": {"start": "08:00", "end": "17:00"},
+  "friday_prayer": {"start": "11:30", "end": "13:00"},
+  "undo_window_seconds": 60,
+  "internal_domains": ["rsmb.example"],
+  "high_impact": {"max_recipients": 3, "payment_keywords": ["transfer", "bayar", "pembayaran", "invoice", "tagihan", "payment"]},
+  "holidays_note": "DATA MOCK untuk demo. Ganti dengan SKB 3 Menteri resmi sebelum dipakai nyata.",
+  "holidays": {
+    "2026-08-17": "Hari Kemerdekaan RI",
+    "2026-08-25": "Maulid Nabi Muhammad SAW",
+    "2026-12-24": "Cuti Bersama Natal",
+    "2026-12-25": "Hari Raya Natal"
+  }
+}

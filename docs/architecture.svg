@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-label="Arsitektur Office Agent RS dengan batas kepercayaan">
+  <title>Arsitektur Office Agent RS</title>
+  <desc>WorkBuddy menyusun rencana lewat MCP. Kernel memvalidasi. Hanya manusia yang menyetujui. Hanya rencana disetujui yang sampai ke executor mock. Semua tercatat di audit log berantai hash.</desc>
+  <style>
+    .bg{fill:#f7f8fa}
+    .zone-llm{fill:#fff4e5;stroke:#d98200;stroke-width:2;stroke-dasharray:8 5}
+    .zone-kernel{fill:#eaf3ff;stroke:#2563eb;stroke-width:2}
+    .zone-human{fill:#e8f6ee;stroke:#15803d;stroke-width:2}
+    .zone-out{fill:#f1f1f4;stroke:#6b7280;stroke-width:2}
+    .box{fill:#ffffff;stroke:#334155;stroke-width:1.5}
+    .audit{fill:#fdf2f8;stroke:#be185d;stroke-width:2}
+    .t{font:14px system-ui,sans-serif;fill:#0f172a}
+    .tb{font:600 14px system-ui,sans-serif;fill:#0f172a}
+    .zt{font:700 13px system-ui,sans-serif;letter-spacing:.04em}
+    .s{font:12px system-ui,sans-serif;fill:#334155}
+    .ln{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#a)}
+    .lnh{stroke:#15803d;stroke-width:2.5;fill:none;marker-end:url(#ag)}
+    .lnx{stroke:#b91c1c;stroke-width:2;fill:none;stroke-dasharray:6 4}
+    .la{stroke:#be185d;stroke-width:1.5;fill:none;stroke-dasharray:3 4}
+    @media (prefers-color-scheme:dark){
+      .bg{fill:#10151c}
+      .zone-llm{fill:#3a2a12;stroke:#fbbf24}
+      .zone-kernel{fill:#12243f;stroke:#7aa2ff}
+      .zone-human{fill:#10301f;stroke:#4ade80}
+      .zone-out{fill:#1d232c;stroke:#94a3b8}
+      .box{fill:#18202a;stroke:#94a3b8}
+      .audit{fill:#3a1630;stroke:#f472b6}
+      .t,.tb{fill:#e6eaf0}.s{fill:#b6c0cc}
+      .ln{stroke:#b6c0cc}.lnh{stroke:#4ade80}.lnx{stroke:#f87171}.la{stroke:#f472b6}
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#334155"/></marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#15803d"/></marker>
+  </defs>
+  <rect class="bg" width="960" height="600"/>
+
+  <!-- Zona 1: LLM, tidak dipercaya -->
+  <rect class="zone-llm" x="20" y="60" width="250" height="360" rx="12"/>
+  <text class="zt" x="36" y="84" fill="#d98200">ZONA 1: TIDAK DIPERCAYA (LLM)</text>
+  <rect class="box" x="40" y="100" width="210" height="64" rx="8"/>
+  <text class="tb" x="52" y="124">Pengguna</text>
+  <text class="s" x="52" y="144">voice note / chat / notulen</text>
+  <rect class="box" x="40" y="200" width="210" height="116" rx="8"/>
+  <text class="tb" x="52" y="224">WorkBuddy AI</text>
+  <text class="s" x="52" y="244">skill office-agent-rs</text>
+  <text class="s" x="52" y="262">menyusun rencana saja</text>
+  <text class="s" x="52" y="280">tidak punya tool approve</text>
+  <text class="s" x="52" y="298">teks dokumen = data</text>
+  <rect class="box" x="40" y="336" width="210" height="64" rx="8"/>
+  <text class="tb" x="52" y="360">Dokumen sumber</text>
+  <text class="s" x="52" y="380">bisa berisi instruksi tertanam</text>
+
+  <!-- Zona 2: kernel -->
+  <rect class="zone-kernel" x="330" y="60" width="300" height="360" rx="12"/>
+  <text class="zt" x="346" y="84" fill="#2563eb">ZONA 2: KERNEL (MCP SERVER)</text>
+  <rect class="box" x="350" y="100" width="260" height="40" rx="8"/>
+  <text class="t" x="362" y="125">9 tool MCP (tanpa approve)</text>
+  <rect class="box" x="350" y="152" width="260" height="146" rx="8"/>
+  <text class="tb" x="362" y="174">Validasi deterministik</text>
+  <text class="s" x="362" y="194">kontak ambigu: tanya, jangan tebak</text>
+  <text class="s" x="362" y="212">WIB/WITA/WIT, jam kerja, libur</text>
+  <text class="s" x="362" y="230">sholat Jumat per zona peserta</text>
+  <text class="s" x="362" y="248">pindai instruksi tertanam</text>
+  <text class="s" x="362" y="266">kutipan sumber harus ada di dokumen</text>
+  <text class="s" x="362" y="284">dampak tinggi: eksternal, &gt;3, bayar</text>
+  <rect class="box" x="350" y="310" width="260" height="90" rx="8"/>
+  <text class="tb" x="362" y="332">Penyimpanan rencana</text>
+  <text class="s" x="362" y="352">status + hash isi rencana</text>
+  <text class="s" x="362" y="370">ubah isi = persetujuan batal</text>
+  <text class="s" x="362" y="388">hanya approved yang bisa jalan</text>
+
+  <!-- Zona 3: manusia -->
+  <rect class="zone-human" x="690" y="60" width="250" height="170" rx="12"/>
+  <text class="zt" x="706" y="84" fill="#15803d">ZONA 3: MANUSIA</text>
+  <rect class="box" x="710" y="100" width="210" height="110" rx="8"/>
+  <text class="tb" x="722" y="124">Layar konfirmasi</text>
+  <text class="s" x="722" y="144">UI web 127.0.0.1:8250</text>
+  <text class="s" x="722" y="162">atau CLI approve (hanya TTY)</text>
+  <text class="s" x="722" y="182">penerima, waktu, isi persis</text>
+  <text class="s" x="722" y="200">proses terpisah dari MCP server</text>
+
+  <!-- Zona 4: executor -->
+  <rect class="zone-out" x="690" y="260" width="250" height="160" rx="12"/>
+  <text class="zt" x="706" y="284" fill="#6b7280">ZONA 4: EKSEKUTOR (MOCK)</text>
+  <rect class="box" x="710" y="300" width="210" height="100" rx="8"/>
+  <text class="tb" x="722" y="324">Email / Kalender / Tugas</text>
+  <text class="s" x="722" y="344">menulis outbox simulasi</text>
+  <text class="s" x="722" y="362">undo 60 detik (recalled)</text>
+  <text class="s" x="722" y="380">tidak ada pengiriman nyata</text>
+
+  <!-- Audit -->
+  <rect class="audit" x="20" y="470" width="920" height="96" rx="12"/>
+  <text class="zt" x="36" y="494" fill="#be185d">CATATAN AUDIT BERANTAI HASH (HANYA DITAMBAH)</text>
+  <text class="t" x="36" y="520">document_ingested · injection_detected · plan_submitted · clarification_required · plan_approved (human)</text>
+  <text class="t" x="36" y="542">execution_blocked · action_executed · plan_undone · undo_refused. Tiap entri memuat hash entri sebelumnya</text>
+
+  <!-- Panah -->
+  <path class="ln" d="M145 164 L145 200"/>
+  <path class="ln" d="M145 336 L145 316"/>
+  <text class="s" x="156" y="330">dibaca sebagai data</text>
+  <path class="ln" d="M250 240 L300 240 L300 120 L350 120"/>
+  <text class="s" x="276" y="232" text-anchor="middle">MCP</text>
+  <path class="lnh" d="M710 170 L660 170 L660 340 L610 340"/>
+  <text class="s" x="665" y="256">setuju</text>
+  <path class="ln" d="M610 380 L710 380"/>
+  <text class="s" x="632" y="372" text-anchor="middle">run</text>
+  <path class="lnx" d="M250 300 C290 300 300 355 342 355"/>
+  <path class="lnx" d="M334 347 L346 363 M346 347 L334 363" style="stroke-dasharray:none"/>
+  <text class="s" x="36" y="444" fill="#b91c1c">garis merah: tidak ada jalur approve dari LLM</text>
+  <path class="la" d="M480 420 L480 470"/>
+  <path class="la" d="M815 420 L815 470"/>
+
+  <text class="s" x="20" y="30">Hijau tebal: satu satunya jalur persetujuan (hanya manusia). Merah putus: jalur yang sengaja tidak ada. Merah muda putus: pencatatan audit.</text>
+  <text class="tb" x="20" y="48">Office Agent RS: batas kepercayaan dan alur persetujuan</text>
+</svg>

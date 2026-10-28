@@ -1,0 +1,8 @@
+[
+  {"id": "c-budi-santoso", "name": "Budi Santoso", "title": "Kepala IT", "email": "budi.santoso@rsmb.example", "tz": "WIB"},
+  {"id": "c-budi-hartono", "name": "Budi Hartono", "title": "Kepala Keuangan", "email": "budi.hartono@rsmb.example", "tz": "WITA"},
+  {"id": "c-siti", "name": "dr. Siti Rahmawati", "title": "Direktur Pelayanan", "email": "siti.rahmawati@rsmb.example", "tz": "WIB"},
+  {"id": "c-rina", "name": "Rina Marlina", "title": "Sekretaris Direksi", "email": "rina.marlina@rsmb.example", "tz": "WIB"},
+  {"id": "c-agus", "name": "Agus Wijaya", "title": "Koordinator Cabang Jayapura", "email": "agus.wijaya@rsmb.example", "tz": "WIT"},
+  {"id": "c-vendor", "name": "Dewi Anggraini (Vendor PACS)", "title": "Account Manager", "email": "dewi@vendorpacs.example", "tz": "WIB"}
+]
